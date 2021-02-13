@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  label-regex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Assign label to new Pull Request"
+      uses: Bhacaz/label-regex@master
+      with:
+        - field: title
+        - regex: '([A-Z]+?)-'
+        - token: ${{ secrets.GH_TOKEN }}

@@ -1,0 +1,24 @@
+{
+  "name": "label-regex",
+  "version": "1.0.0",
+  "description": "Github Action to put label base on field and regex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhacaz/label-regex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhacaz/label-regex/issues"
+  },
+  "homepage": "https://github.com/Bhacaz/label-regex#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@octokit/rest": "^18.1.1"
+  }
+}
