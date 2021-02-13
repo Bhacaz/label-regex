@@ -1,7 +1,7 @@
+name: 'Add label'
 on:
   pull_request:
     types: [opened, edited]
-
 jobs:
   label_regex:
     runs-on: ubuntu-latest
