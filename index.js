@@ -22,11 +22,15 @@ octokit.pulls.get({
       }
       if(labelToAssign) {
         if(forceLowerCase) { labelToAssign = labelToAssign.toLowerCase() }
-         octokit.issues.addLabels({
+        console.log('Assigning label: ' + labelToAssign);
+         return octokit.issues.addLabels({
             owner,
             repo,
             issue_number: pullRequestNumber,
             labels: [labelToAssign]
         })
       }
+  })
+  .catch(err => {
+      console.log(err);
   })

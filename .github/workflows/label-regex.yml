@@ -11,5 +11,5 @@ jobs:
         uses: Bhacaz/label-regex@main
         with:
           field: branch
-          regex: '([a-z]+?)_'
+          regex: '([A-Z]+?)_'
           token: ${{ secrets.GH_TOKEN }}
