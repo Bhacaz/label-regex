@@ -24,7 +24,7 @@ jobs:
     name: Add label
     steps:
       - name: "Assign label to new Pull Request"
-        uses: Bhacaz/label-regex@main
+        uses: Bhacaz/label-regex@v1
         with:
           field: title
           regex: '([A-Z]+?)-'
