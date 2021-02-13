@@ -10,6 +10,6 @@ jobs:
       - name: "Assign label to new Pull Request"
         uses: Bhacaz/label-regex@main
         with:
-          field: title
-          regex: '([A-Z]+?)-'
+          field: branch
+          regex: '([A-Z]+?)_'
           token: ${{ secrets.GH_TOKEN }}
