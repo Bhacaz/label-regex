@@ -30,3 +30,4 @@ jobs:
           regex: '([A-Z]+?)-'
           token: ${{ secrets.GH_TOKEN }}
 ```
+
