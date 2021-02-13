@@ -1,7 +1,6 @@
 const core = require('@actions/core');
 const { Octokit } = require("@octokit/rest");
 const octokit = new Octokit({ auth: core.getInput('token') });
-
 const fieldToMatch = core.getInput('field');
 const regexToApply = new RegExp(core.getInput('regex'));
 const forceLowerCase = core.getInput('lowercase');
@@ -16,7 +15,11 @@ octokit.pulls.get({
     pull_number: pullRequestNumber,
   })
   .then((data) => {
-      let labelToAssign = regexToApply.exec(data.data[fieldToMatch])[1]
+      if (fieldToMatch === 'branch') {
+        let labelToAssign = regexToApply.exec(data.data.head.ref)[1]
+      } else {
+        let labelToAssign = regexToApply.exec(data.data[fieldToMatch])[1]
+      }
       if(labelToAssign) {
         if(forceLowerCase) { labelToAssign = labelToAssign.toLowerCase() }
          octokit.issues.addLabels({

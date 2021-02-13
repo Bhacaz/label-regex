@@ -1,8 +1,8 @@
 name: 'Label Regex'
-description: 'Use Github repository fields and regex to assign label on Pull Request'
+description: 'Use Pull Request fields and regex to assign automaticlly assign and create label on Pull Requests'
 inputs:
   field:
-    description: 'The field to apply the regex and found the label. Permitted values or `title` and `body`.'
+    description: 'The field to apply the regex and found the label. Permitted values or `title`, `branch` and `body`.'
     required: true
     default: 'World'
   regex:
