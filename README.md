@@ -6,10 +6,12 @@ It can be useful when working with ticket number or pattern for naming branch of
 
 ## Variables
 
-* `field`: With what the regex will be performed on. Values supported are `title`, `body` and `branch`.
-* `regex`: 'The regex to match with the field. Example: `([A-Z]+?)-`, will match `FIX-1234 My awsome bug fix` => `FIX`'
-* `lowercase`: Force to lowercase the label name
-* `token`: A personal Github access token
+|Variable|Required|Default|Possible values|Description|
+|---|---|---|---|---|
+|`field`|`true`| |`title`, `body`, `branch`|With what the regex will be performed on.|
+|`regex`|`true`| |Any valide regex that return a group|The regex to match with the field. Example: `([A-Z]+?)-`, will match `FIX-1234 My awsome bug fix` => `FIX`|
+|`lowercase`|`false`|`false`|`true`, `false`|Force to lowercase the match for the label name|
+|`token`|`true`| |`true`, `false`|A private Github access token|
 
 ## Exemple of action config
 
@@ -28,5 +30,6 @@ jobs:
         with:
           field: title
           regex: '([A-Z]+?)-'
+          lowercase: true
           token: ${{ secrets.GH_TOKEN }}
 ```
