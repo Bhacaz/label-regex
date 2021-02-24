@@ -16,10 +16,11 @@ octokit.pulls.get({
   })
   .then((data) => {
       console.log(data.data.head)
+      let labelToAssign;
       if(fieldToMatch === 'branch') {
-        let labelToAssign = regexToApply.exec(data.data.head.ref)[1]
+        labelToAssign = regexToApply.exec(data.data.head.ref)[1]
       } else {
-        let labelToAssign = regexToApply.exec(data.data[fieldToMatch])[1]
+        labelToAssign = regexToApply.exec(data.data[fieldToMatch])[1]
       }
       if(labelToAssign) {
         if(forceLowerCase) { labelToAssign = labelToAssign.toLowerCase() }
