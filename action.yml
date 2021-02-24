@@ -1,7 +1,8 @@
 name: 'Label Regex'
 description: 'Use Pull Request fields and regex to create and assign automatically label on Pull Requests'
-icon: tag
-color: yellow
+branding:
+  icon: tag
+  color: yellow
 inputs:
   field:
     description: 'The field to apply the regex and found the label. Permitted values or `title`, `branch` and `body`.'
