@@ -15,7 +15,6 @@ octokit.pulls.get({
     pull_number: pullRequestNumber,
   })
   .then((data) => {
-      console.log(data.data.head)
       let labelToAssign;
       if(fieldToMatch === 'branch') {
         labelToAssign = regexToApply.exec(data.data.head.ref)[1]
