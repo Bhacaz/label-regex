@@ -13,7 +13,7 @@ It can be useful when working with ticket number or pattern for naming branch of
 |`lowercase`|`false`|`false`|`true`, `false`|Force to lowercase the match for the label name|
 |`token`|`true`| |`true`, `false`|A private Github access token|
 
-## Exemple of action config
+## Example of action config
 
 ```yml
 on:
