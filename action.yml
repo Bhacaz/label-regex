@@ -18,7 +18,8 @@ inputs:
     default: true
   token:
     description: 'A personal Github access token'
-    required: true
+    required: false
+    default: ${{ github.token }}
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
