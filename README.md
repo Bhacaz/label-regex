@@ -6,12 +6,12 @@ It can be useful when working with ticket number or pattern for naming branch of
 
 ## Variables
 
-|Variable| Required | Default               | Possible values                      |Description|
-|---|----------|-----------------------|--------------------------------------|---|
-|`field`| `true`   |                       | `title`, `body`, `branch`            |With what the regex will be performed on.|
-|`regex`| `true`   |                       | Any valide regex that return a group |The regex to match with the field. Example: `([A-Z]+?)-`, will match `FIX-1234 My awsome bug fix` => `FIX`|
-|`lowercase`| `false`  | `false`               | `true`, `false`                      |Force to lowercase the match for the label name|
-|`token`| `false`  | `${{ github.token }}` |                                      |A private Github access token|
+|Variable| Required | Default               | Possible values                      | Description                                                                                                          |
+|---|----------|-----------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+|`field`| `true`   |                       | `title`, `body`, `branch`            | With what the regex will be performed on.                                                                            |
+|`regex`| `true`   |                       | Any valide regex that return a group | The regex to match with the field. Example: `([A-Z]+?)-`, will match PR title: `FIX-1234 My awsome bug fix` => `FIX` |
+|`lowercase`| `false`  | `false`               | `true`, `false`                      | Force to lowercase the match for the label name                                                                      |
+|`token`| `false`  | `${{ github.token }}` |                                      | A private Github access token                                                                                        |
 
 ## Example of action config
 
