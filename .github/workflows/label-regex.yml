@@ -12,4 +12,3 @@ jobs:
         with:
           field: branch
           regex: '([A-Za-z]+?)_'
-          token: ${{ secrets.GH_TOKEN }}
