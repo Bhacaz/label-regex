@@ -4,6 +4,8 @@ Github Action to put label base on a pull request field and regex.
 This action will use a regex to **automatically create** and assign label to a Pull Request.
 It can be useful when working with ticket number or pattern for naming branch of PR title.
 
+When the regex have multi groups, the action will use the first matching group.
+
 ## Variables
 
 |Variable| Required | Default               | Possible values                      | Description                                                                                                          |
