@@ -9,6 +9,18 @@ const pullRequestNumber = parseInt(/refs\/pull\/(\d+?)\//.exec(process.env['GITH
 const owner = repository.split('/')[0]
 const repo = repository.split('/')[1]
 
+
+function firstMatchingGroup(stringToMatch) {
+  const match = regexToApply.exec(stringToMatch)
+  if(match) {
+    for (let i = 1; i < match.length; i++) {
+      if (match[i] !== undefined) {
+        return match[i]
+      }
+    }
+  }
+}
+
 octokit.pulls.get({
     owner,
     repo,
@@ -17,9 +29,9 @@ octokit.pulls.get({
   .then((data) => {
       let labelToAssign;
       if(fieldToMatch === 'branch') {
-        labelToAssign = regexToApply.exec(data.data.head.ref)[1]
+        labelToAssign = firstMatchingGroup(data.data.head.ref)
       } else {
-        labelToAssign = regexToApply.exec(data.data[fieldToMatch])[1]
+        labelToAssign = firstMatchingGroup(data.data[fieldToMatch])
       }
       if(labelToAssign) {
         if(forceLowerCase) { labelToAssign = labelToAssign.toLowerCase() }
