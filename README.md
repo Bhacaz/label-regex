@@ -35,3 +35,33 @@ jobs:
           lowercase: true
           token: ${{ github.token }}
 ```
+
+## Regex examples
+
+### Simple
+
+```regex
+^(\w+)-
+```
+
+| PR title                    | -> Label added |
+|------------------------------------|-------------|
+| BUG-123 Fix something              | bug         |
+
+
+### More complexe
+
+```regex
+^chore\(.*(deps)\)|^(fix|hotfix|feat|refactor|docs)
+```
+
+| PR title                    | -> Label added |
+|------------------------------------|-------------|
+| chore(deps)                        | deps        |
+| chore(dev-deps)                    | deps        |
+| fix(admin): updated something      | fix         |
+| fix: updated something             | fix         |
+| refactor(admin): changed something | refactor    |
+| refactor: changed something        | refactor    |
+| docs(admin): about something       | docs        |
+| docs: about something              | docs        |
